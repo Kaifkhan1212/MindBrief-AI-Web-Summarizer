@@ -71,7 +71,7 @@ git push -u origin main
 
 ### Step 6: Verify Upload
 
-1. Visit: https://github.com/Ogshub/MindBrief-AI_Summarizer
+1. Visit: https://github.com/Kaifkhan1212/MindBrief-MindBrief-01
 2. Check that all files are present:
    - `README.md` (with workflow documentation)
    - `backend/` folder with all files
