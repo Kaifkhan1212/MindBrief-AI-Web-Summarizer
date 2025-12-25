@@ -116,4 +116,4 @@ npm run dev
 MIT License. See [LICENSE](LICENSE) for details.
 
 ---
-Built by [Ogshub](https://github.com/Ogshub)
+Built by [Kaif Khan](https://github.com/Kaifkhan1212)
