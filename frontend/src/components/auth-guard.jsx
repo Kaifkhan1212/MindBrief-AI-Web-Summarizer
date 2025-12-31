@@ -4,15 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 
-interface AuthGuardProps {
-  children: React.ReactNode;
-  requireAuth?: boolean;
-}
-
 export default function AuthGuard({
   children,
   requireAuth = true,
-}: AuthGuardProps) {
+}) {
   const { user, loading } = useAuth();
   const router = useRouter();
   const [shouldRender, setShouldRender] = useState(false);

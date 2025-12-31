@@ -25,7 +25,7 @@ export default function LoginPage() {
   const { signIn, signUp, signInWithGoogle } = useAuth();
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -37,7 +37,7 @@ export default function LoginPage() {
         await signIn(email, password);
       }
       router.push("/dashboard");
-    } catch (err: any) {
+    } catch (err) {
       setError(err.message || "An error occurred");
     } finally {
       setLoading(false);
@@ -51,7 +51,7 @@ export default function LoginPage() {
     try {
       await signInWithGoogle();
       router.push("/dashboard");
-    } catch (err: any) {
+    } catch (err) {
       setError(err.message || "An error occurred");
     } finally {
       setLoading(false);

@@ -8,23 +8,31 @@ MindBrief is a powerful, full-stack AI research assistant that helps you discove
 
 -   **Deep Web Search**: Integrated DuckDuckGo search to find relevant articles on any topic.
 -   **Smart Content Extraction**: Uses **Mozilla Readability** engine (same as Firefox Reader View) to accurately extracting article text, filtering out ads, navbars, and clutter.
--   **AI-Powered Summarization**: Leveraging Google Gemini 1.5 Flash to synthesize multiple sources into a single, cohesive research document.
+-   **AI-Powered Summarization**: Leveraging Google Gemini 2.5 Flash to synthesize multiple sources into a single, cohesive research document.
 -   **Personal Vault**: Save your summaries for later access (supports in-memory or Firebase Firestore storage).
 -   **Export Options**: Download your research as Markdown (`.md`) or Text (`.txt`) files.
--   **Modern UI**: Built with Next.js 15, Tailwind CSS, and Framer Motion for a smooth, responsive experience.
+-   **Modern UI**: Built with Next.js 14, Tailwind CSS, and Framer Motion for a smooth, responsive experience.
 
 ## 🛠️ Technology Stack
 
--   **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS, TypeScript
--   **Backend**: Node.js, Express.js
--   **AI Engine**: Google Gemini API (`gemini-1.5-flash`)
--   **Scraping**: `axios`, `cheerio`, `jsdom`, `@mozilla/readability`
--   **Database**: Firebase Firestore (Optional) / In-Memory (Default)
+### Frontend
+-   **Core**: Next.js 14.2 (App Router), React 18.3, JavaScript (JSX)
+-   **UI & Styling**: Tailwind CSS, Shadcn UI (`@radix-ui`), Framer Motion (Animations), Lucide React (Icons), `clsx` & `tailwind-merge`
+-   **State & Networking**: TanStack Query (`@tanstack/react-query`), React Hook Form
+-   **Package Manager**: `pnpm`
+
+### Backend
+-   **Runtime**: Node.js, Express.js
+-   **AI**: Google Gemini API (`@google/generative-ai` - using `gemini-2.5-flash`)
+-   **Scraping & Processing**: `axios`, `cheerio` (HTML Cleaning), `@mozilla/readability` (Content Extraction), `jsdom`
+-   **Validation & Security**: `joi` (Validation), `helmet` (Security), `cors`
+-   **Database**: Firebase Admin SDK (Firestore) / In-Memory Storage
+
 
 ## 📋 Prerequisites
 
--   Neod.js 18.0.0 or higher
--   npm (Node Package Manager)
+-   Node.js 18.0.0 or higher
+-   pnpm (Preferred Package Manager)
 -   A Google Gemini API Key (Free tier available at [Google AI Studio](https://makersuite.google.com/app/apikey))
 
 ## 📦 Installation & Setup
@@ -58,7 +66,7 @@ You need to set up both the **Frontend** and **Backend** separately.
     ```
 2.  Install dependencies:
     ```bash
-    npm install
+    pnpm install
     ```
 3.  Configure Environment Variables:
     Create a `.env.local` file in the `frontend` directory:
@@ -87,7 +95,7 @@ npm run dev
 **Terminal 2: Frontend**
 ```bash
 cd frontend
-npm run dev
+pnpm dev
 ```
 *Runs on [http://localhost:3000](http://localhost:3000)*
 

@@ -2,7 +2,7 @@
  * Utility functions for downloading content
  */
 
-export function downloadText(content: string, filename: string) {
+export function downloadText(content, filename) {
   const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -14,7 +14,7 @@ export function downloadText(content: string, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-export function downloadMarkdown(content: string, filename: string) {
+export function downloadMarkdown(content, filename) {
   const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
@@ -27,9 +27,9 @@ export function downloadMarkdown(content: string, filename: string) {
 }
 
 export function formatFilename(
-  topic: string,
-  extension: string = "txt"
-): string {
+  topic,
+  extension = "txt"
+) {
   const sanitized = topic
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")

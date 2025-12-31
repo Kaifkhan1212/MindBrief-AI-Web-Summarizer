@@ -393,7 +393,7 @@ router.post("/", async (req, res) => {
 
     // Use Gemini to summarize
     try {
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash" });
 
       const prompt = `You are an expert researcher and technical writer. Based on the following content from multiple sources about "${topic}", create a comprehensive, well-organized single-page summary document that:
 

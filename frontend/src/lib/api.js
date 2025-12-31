@@ -4,7 +4,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 export const api = {
   baseUrl: API_BASE_URL,
 
-  async request(endpoint: string, options: RequestInit = {}) {
+  async request(endpoint, options = {}) {
     const url = `${API_BASE_URL}${endpoint}`;
 
     try {
@@ -46,12 +46,12 @@ export const api = {
 
   // Search endpoints
   search: {
-    searchTopic: (topic: string) =>
+    searchTopic: (topic) =>
       api.request("/api/search", {
         method: "POST",
         body: JSON.stringify({ topic }),
       }),
-    scrapeUrl: (url: string) =>
+    scrapeUrl: (url) =>
       api.request("/api/search/scrape", {
         method: "POST",
         body: JSON.stringify({ url }),
@@ -60,7 +60,7 @@ export const api = {
 
   // Summarize endpoints
   summarize: {
-    summarizeUrls: (topic: string, urls: string[]) =>
+    summarizeUrls: (topic, urls) =>
       api.request("/api/summarize", {
         method: "POST",
         body: JSON.stringify({ topic, urls }),
@@ -69,17 +69,17 @@ export const api = {
 
   // Vault endpoints
   vault: {
-    getItems: (userId: string) =>
+    getItems: (userId) =>
       api.request(`/api/vault/${userId}`, { method: "GET" }),
     saveItem: (
-      userId: string,
-      item: { topic: string; summary: string; sources: any[] }
+      userId,
+      item
     ) =>
       api.request(`/api/vault/${userId}`, {
         method: "POST",
         body: JSON.stringify(item),
       }),
-    deleteItem: (userId: string, itemId: string) =>
+    deleteItem: (userId, itemId) =>
       api.request(`/api/vault/${userId}/${itemId}`, {
         method: "DELETE",
       }),

@@ -6,26 +6,12 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/lib/auth-context";
 import { api } from "@/lib/api";
 
-interface VaultItem {
-  id: string;
-  topic: string;
-  summary: string;
-  sources: Array<{ url: string; title: string }>;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface VaultProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-export default function Vault({ isOpen, onClose }: VaultProps) {
+export default function Vault({ isOpen, onClose }) {
   const { user } = useAuth();
-  const [items, setItems] = useState<VaultItem[]>([]);
+  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedItem, setSelectedItem] = useState<VaultItem | null>(null);
-  const [isDeleting, setIsDeleting] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isDeleting, setIsDeleting] = useState(null);
 
   useEffect(() => {
     if (isOpen && user) {
@@ -49,7 +35,7 @@ export default function Vault({ isOpen, onClose }: VaultProps) {
     }
   };
 
-  const handleDelete = async (itemId: string) => {
+  const handleDelete = async (itemId) => {
     if (!user?.uid) return;
 
     if (!confirm("Are you sure you want to delete this summary?")) {
@@ -168,11 +154,10 @@ export default function Vault({ isOpen, onClose }: VaultProps) {
                     <div
                       key={item.id}
                       onClick={() => setSelectedItem(item)}
-                      className={`p-4 mb-2 rounded-xl cursor-pointer transition-all ${
-                        selectedItem?.id === item.id
-                          ? "bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-400 shadow-sm"
-                          : "bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm"
-                      }`}
+                      className={`p-4 mb-2 rounded-xl cursor-pointer transition-all ${selectedItem?.id === item.id
+                        ? "bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-400 shadow-sm"
+                        : "bg-white border border-slate-200 hover:border-indigo-300 hover:shadow-sm"
+                        }`}
                     >
                       <h3 className="font-semibold text-sm text-slate-900 truncate mb-1">
                         {item.topic}
