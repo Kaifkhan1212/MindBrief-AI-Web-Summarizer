@@ -4,7 +4,7 @@
 This document describes the complete workflow of the MindBrief AI Summarizer application, from user interaction to data storage.
 
 ## Architecture
-- **Frontend**: Next.js 15 with React 19, TypeScript, Tailwind CSS
+- **Frontend**: Next.js 15 with React 19, Javascript, Tailwind CSS
 - **Backend**: Express.js with Node.js
 - **AI**: Google Gemini API for summarization
 - **Database**: Firebase Firestore (optional, with in-memory fallback)
@@ -320,7 +320,7 @@ Firebase config uses these variables
 
 ### Google Gemini API
 - Used for AI-powered summarization
-- Model: gemini-1.5-flash
+- Model: gemini-2.5-flash
 - Free tier available
 - Requires API key
 
