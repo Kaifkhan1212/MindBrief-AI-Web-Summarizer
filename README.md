@@ -1,6 +1,9 @@
 # MindBrief - Intelligent Web Summarizer
 
-MindBrief is a powerful, full-stack AI research assistant that helps you discover, read, and summarize content from the web. It uses advanced web scraping and Google's Gemini AI to transform scattered web articles into comprehensive, well-structured research summaries.
+MindBrief is a full-stack AI-powered research assistant that helps users discover,
+extract, and summarize information from multiple web sources. By combining intelligent
+web scraping with Google Gemini (gemini-2.5-flash), it converts scattered articles into
+a single, well-structured research document.
 
 ![MindBrief Dashboard](https://placehold.co/1200x600/6366f1/ffffff?text=MindBrief+Dashboard)
 
