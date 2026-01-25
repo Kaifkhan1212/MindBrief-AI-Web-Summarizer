@@ -25,7 +25,11 @@ MindBrief is an AI-powered research assistant that helps you quickly understand 
 ## 📋 Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- [npm](https://www.npmjs.com/) (comes with Node.js)
+- pnpm (recommended) or npm
+
+> ⚠️ This project uses **pnpm** as the preferred package manager (see `pnpm-lock.yaml`).  
+> You may use npm, but pnpm is recommended for consistent dependency versions.
+
 
 ## 🛠️ Quick Start
 
@@ -35,14 +39,14 @@ MindBrief is an AI-powered research assistant that helps you quickly understand 
 
 ```bash
 cd backend
-npm install
+pnpm install
 ```
 
 **Frontend:**
 
 ```bash
 cd frontend
-npm install
+pnpm install
 ```
 
 ### 2. Start the Servers
@@ -53,14 +57,14 @@ You need to run **two servers** simultaneously:
 
 ```bash
 cd backend
-npm run dev
+pnpm run dev
 ```
 
 **Terminal 2 - Frontend:**
 
 ```bash
 cd frontend
-npm run dev
+pnpm run dev
 ```
 
 ### 3. Access the Application
@@ -163,7 +167,7 @@ GOOGLE_APPLICATION_CREDENTIALS=./path/to/service-account-key.json
 
 ### Backend Offline
 
-1. Ensure backend is running: `cd backend && npm run dev`
+1. Ensure backend is running: `cd backend && pnpm run dev`
 2. Check health: Visit `http://localhost:5000/api/health`
 3. Verify port 5000 is not in use
 
@@ -187,8 +191,8 @@ lsof -ti:5000 | xargs kill
 ```bash
 cd frontend
 rm -rf node_modules
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## 📁 Project Structure
@@ -231,14 +235,14 @@ MindBrief-AI_Summarizer/
 
 ### Backend
 
-- `npm start` - Start production server
-- `npm run dev` - Start with auto-reload
+- `pnpm start` - Start production server
+- `pnpm run dev` - Start with auto-reload
 
 ### Frontend
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Start production server
+- `pnpm run dev` - Start development server
+- `pnpm run build` - Build for production
+- `pnpm start` - Start production server
 
 ## 🌟 API Endpoints
 
@@ -256,7 +260,7 @@ MindBrief-AI_Summarizer/
 
 ```bash
 cd backend
-npm install
+pnpm install
 # Or use requirements.txt as reference
 ```
 
@@ -264,7 +268,7 @@ npm install
 
 ```bash
 cd frontend
-npm install
+pnpm install
 # Or use requirements.txt as reference
 ```
 
@@ -356,7 +360,7 @@ Backend filters valid content (length > 30 chars)
   ↓
 If Gemini API key configured:
   - Combines all content
-  - Sends to Gemini API (gemini-1.5-flash model)
+  - Sends to Gemini API (gemini-2.5-flash model)
   - Gets AI-generated summary
 Else:
   - Creates formatted summary from scraped content
@@ -528,14 +532,14 @@ Response back through chain
 ### Backend Deployment
 
 1. Set environment variables on your hosting platform
-2. Run `npm install` in the backend directory
-3. Start server with `npm start`
+2. Run `pnpm install` in the backend directory
+3. Start server with `pnpm start`
 
 ### Frontend Deployment
 
 1. Set environment variables (NEXT_PUBLIC_*)
-2. Run `npm run build`
-3. Deploy the `.next` folder or use `npm start`
+2. Run `pnpm run build`
+3. Deploy the `.next` folder or use `pnpm start`
 
 ### Recommended Platforms
 
