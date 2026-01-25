@@ -94,35 +94,35 @@ npm or pnpm
 Google Gemini API Key
 
 🛠️ Quick Start
-1️⃣ Install Dependencies
+1. Install Dependencies
 
-Backend:
+Backend
 
 cd backend
 npm install
 
 
-Frontend:
+Frontend
 
 cd frontend
 npm install
 
-2️⃣ Start the Servers
+2. Start the Servers
 
 Run two servers simultaneously.
 
-Terminal 1 (Backend):
+Terminal 1 (Backend)
 
 cd backend
 npm run dev
 
 
-Terminal 2 (Frontend):
+Terminal 2 (Frontend)
 
 cd frontend
 npm run dev
 
-3️⃣ Access the Application
+3. Access the Application
 
 Open your browser:
 
@@ -141,28 +141,17 @@ Download as TXT or Markdown
 Save to Vault for later use
 
 ⚙️ Configuration
-Step 1: Backend Environment Variables
+Backend Environment Variables
 
-Create a .env file in backend:
+Create .env in backend:
 
 GEMINI_API_KEY=your_gemini_api_key_here
 PORT=5000
 FRONTEND_URL=http://localhost:3000
 
+Frontend Environment Variables
 
-Get Gemini API Key:
-
-Go to Google AI Studio
-
-Create API Key
-
-Paste into .env
-
-Without Gemini API key, summaries will be generated from scraped content only.
-
-Step 2: Frontend Environment Variables
-
-Create a .env.local file in frontend:
+Create .env.local in frontend:
 
 NEXT_PUBLIC_FIREBASE_API_KEY=your_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
@@ -176,17 +165,15 @@ Firebase Admin (Optional – Persistent Vault)
 
 Add one of the following to backend/.env:
 
-Option 1 (Recommended):
-
 FIREBASE_SERVICE_ACCOUNT={...service-account-json...}
 
 
-Option 2:
+OR
 
 FIREBASE_PROJECT_ID=your-project-id
 
 
-Option 3:
+OR
 
 GOOGLE_APPLICATION_CREDENTIALS=./service-account-key.json
 
@@ -264,7 +251,7 @@ npm run build
 npm start
 
 
-Recommended Platforms:
+Recommended Platforms
 
 Vercel (Frontend)
 
@@ -298,5 +285,3 @@ MIT License. See LICENSE
 
 Kaif Khan
 GitHub: https://github.com/Kaifkhan1212
-
-🎉 Happy Summarizing!
