@@ -24,18 +24,20 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // CORS configuration
-app.use(
-  cors({
-    origin: [
-      process.env.FRONTEND_URL,
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "http://127.0.0.1:3000",
-      "http://127.0.0.1:3001",
-    ].filter(Boolean),
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       process.env.FRONTEND_URL,
+//       "http://localhost:3000",
+//       "http://localhost:3001",
+//       "http://127.0.0.1:3000",
+//       "http://127.0.0.1:3001",
+//     ].filter(Boolean),
+//     credentials: true,
+//   })
+// );
+app.use(cors());
+
 
 // Body parsing middleware
 app.use(express.json({ limit: "10mb" }));
